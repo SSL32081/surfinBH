@@ -75,6 +75,8 @@ All of these can be installed through pip or conda.
 * [gwsurrogate](https://pypi.org/project/gwsurrogate)
 * [NRSur7dq2](https://pypi.org/project/NRSur7dq2) (only for surfinBH7dq2)
 
+> Note: The fit data used here is not the same as the one in LALSuite-Extra.
+
 ## Usage
 
 ```python
