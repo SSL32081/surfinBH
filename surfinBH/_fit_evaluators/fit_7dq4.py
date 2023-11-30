@@ -181,9 +181,16 @@ class Fit7dq4(surfinBH.SurFinBH):
 
     #-------------------------------------------------------------------------
     def _load_NRSur7dq4(self):
+        import os
         import gwsurrogate
         from gwsurrogate.new.precessing_surrogate import splinterp_many
-        self.nrsur = gwsurrogate.LoadSurrogate('NRSur7dq4')
+
+        LAL_DATA_PATH = os.environ.get('LAL_DATA_PATH', None)
+        nrsur_name = 'NRSur7dq4'
+        if LAL_DATA_PATH is not None:
+            nrsur_name = LAL_DATA_PATH + '/' + nrsur_name + '.h5'
+
+        self.nrsur = gwsurrogate.LoadSurrogate(nrsur_name)
         self.splinterp_many = splinterp_many
 
     #-------------------------------------------------------------------------
